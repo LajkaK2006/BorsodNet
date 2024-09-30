@@ -1,0 +1,6 @@
+vlan eszköz neve
+vlan azonosító pl:100,200
+vlan név
+vlan portok pl:
+vlan hálóat
+
