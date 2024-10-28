@@ -10,6 +10,7 @@ Hálózat kiépítése,konfigurálása:
 -OSPFv3: Enyedi Sándor
 -SSH: Váradi Ádám
 -HSRP: Lajka Kristóf, Váradi Ádám
+-HSRPv6: Lajka Kristóf
 -NAT: Váradi Ádám
 -Linux szerver: Lajka Kristóf
 -Windows szerver: Váradi Ádám
