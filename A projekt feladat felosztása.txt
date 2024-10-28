@@ -1,0 +1,20 @@
+A projekt feladat felosztása:
+Hálózat kiépítése,konfigurálása:
+-Topológia: Lajka Kristóf
+-IP címzés: Lajka Kristóf
+-DHCPv4,DHCPv6(SLAAC és Stateful): Lajka Kristóf
+-Alapbeállítások(napi üzenet, jelszavak, hostname): Lajka Kristóf, Váradi Ádám
+-Statikus routiong: Váradi Ádám
+-Port biztonság(port-security, bpduguard, portfast): Enyedi Sándor
+-OSPFv2: Enyedi Sándor
+-OSPFv3: Enyedi Sándor
+-SSH: Váradi Ádám
+-HSRP: Lajka Kristóf, Váradi Ádám
+-NAT: Váradi Ádám
+-Linux szerver: Lajka Kristóf
+-Windows szerver: Váradi Ádám
+-Wi-Fi(WLAN): Lajka Kristóf
+
+Dokumentáció:
+-PPT: Váradi Ádám
+-Word: Lajka Kristóf, Váradi Ádám
