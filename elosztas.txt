@@ -1,0 +1,7 @@
+Vizsgaremek december:
+
+Lajka Kristóf:A topológia kialakítása,IPv4/IPv6 címzés,Vlanok és forgalomirányítás,ACL beállítása,
+
+Enyedi Sándor: OSPF konfigurálása,prezentáció megvalósítása,dokumentálás.
+
+Váradi Ádám: A topológia kialakítása,Vlanok és forgalomirányítás, NAT konfigurálása,SSH konfigurálása,IPv4/IPv6 címzés,
