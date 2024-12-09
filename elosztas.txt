@@ -1,7 +1,10 @@
-Vizsgaremek december:
+Vizsgaremek feladatelosztása:
 
-Lajka Kristóf:A topológia kialakítása,IPv4/IPv6 címzés,Vlanok és forgalomirányítás,ACL beállítása,
+Lajka Kristóf + Váradi Ádám: A topológia kialakítása,IPv4/IPv6 címzés,
+
+Váradi Ádám: Alapbeállítások,Vlanok és forgalomirányítás,Etherchannel beállítás,NAT beállítás,
+
+Lajka Kristóf: HSRP beállítás,ACL beállítás,WI-FI beállítás,WAN összeköttetés
 
 Enyedi Sándor: OSPF konfigurálása,prezentáció megvalósítása,dokumentálás.
 
-Váradi Ádám: A topológia kialakítása,Vlanok és forgalomirányítás, NAT konfigurálása,SSH konfigurálása,IPv4/IPv6 címzés,
