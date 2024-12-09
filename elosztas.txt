@@ -1,10 +1,10 @@
 Vizsgaremek feladatelosztása:
 
-Lajka Kristóf + Váradi Ádám: A topológia kialakítása,IPv4/IPv6 címzés,
+Lajka Kristóf + Váradi Ádám: A topológia kialakítása,IPv4/IPv6 címzés
 
-Váradi Ádám: Alapbeállítások,Vlanok és forgalomirányítás,Etherchannel beállítás,NAT beállítás,
+Váradi Ádám: Alapbeállítások,Vlanok és forgalomirányítás,Etherchannel beállítás,NAT beállítás, IP Route beállítása
 
-Lajka Kristóf: HSRP beállítás,ACL beállítás,WI-FI beállítás,WAN összeköttetés
+Lajka Kristóf: HSRP beállítás,ACL beállítás,WI-FI beállítás,WAN összeköttetés,DHCP beállítás,
 
 Enyedi Sándor: OSPF konfigurálása,prezentáció megvalósítása,dokumentálás.
 
