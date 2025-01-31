@@ -1,0 +1,170 @@
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname DeliverySW2
+!
+enable password 7 0822455D0A16
+!
+!
+!
+ip ssh version 2
+ip domain-name taco.com
+!
+username admin secret 5 $1$mERr$vTbHul1N28cEp8lkLqr0f/
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface FastEthernet0/1
+ switchport mode trunk
+ channel-group 1 mode passive
+!
+interface FastEthernet0/2
+ switchport mode trunk
+ channel-group 1 mode passive
+!
+interface FastEthernet0/3
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/4
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/5
+ switchport access vlan 50
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0060.7097.8110
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/6
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/7
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/8
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/9
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/10
+ switchport access vlan 50
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 00D0.58D2.83A7
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/11
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/12
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/13
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/14
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/15
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/16
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/17
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/18
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/19
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/20
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/21
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/22
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/23
+ switchport access vlan 99
+ shutdown
+!
+interface FastEthernet0/24
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet0/1
+ ip dhcp snooping trust
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ switchport access vlan 99
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan50
+ ip address 192.168.5.109 255.255.255.240
+!
+banner motd !WARNING. You need authorization for this device!
+!
+!
+!
+line con 0
+ password 7 082243401A160912
+ login
+!
+line vty 0 4
+ password 7 0822404F1A0A
+ login local
+ transport input ssh
+line vty 5 15
+ password 7 0822404F1A0A
+ login local
+ transport input ssh
+!
+!
+!
+!
+end
+

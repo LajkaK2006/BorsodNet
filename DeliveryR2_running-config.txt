@@ -1,0 +1,148 @@
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname DeliveryR2
+!
+!
+!
+enable password 7 0822455D0A16
+!
+!
+ip dhcp excluded-address 192.168.5.97 192.168.5.102
+!
+ip dhcp pool LAN2
+ network 192.168.5.96 255.255.255.240
+ default-router 192.168.5.97
+ dns-server 8.8.8.8
+!
+!
+!
+no ip cef
+ipv6 unicast-routing
+!
+no ipv6 cef
+!
+!
+!
+username Center password 7 082048430017
+username admin secret 5 $1$mERr$vTbHul1N28cEp8lkLqr0f/
+!
+!
+license udi pid CISCO1941/K9 sn FTX1524O9WR-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name taco.hu
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Tunnel1
+ ip address 172.16.20.2 255.255.255.0
+ mtu 1476
+ tunnel source Serial0/1/1
+ tunnel destination 20.0.0.2
+!
+!
+interface GigabitEthernet0/0
+ ip address 192.168.6.1 255.255.255.240
+ duplex auto
+ speed auto
+ ipv6 address 2001:ACAD:DB8:6::3/64
+ ipv6 ospf 1 area 0
+!
+interface GigabitEthernet0/1
+ ip address 192.168.5.3 255.255.255.192
+ ip access-group 2 in
+ duplex auto
+ speed auto
+ ipv6 address 2001:ACAD:DB8:7::3/64
+ standby version 2
+ standby 0 ip 192.168.5.94
+ standby preempt
+ standby 2 ipv6 autoconfig 
+!
+interface GigabitEthernet0/1.50
+ encapsulation dot1Q 50
+ ip address 192.168.5.97 255.255.255.240
+ ipv6 address 2001:ACAD:DB8:5::1/64
+ ipv6 ospf 2 area 0
+ standby version 2
+!
+interface Serial0/1/0
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Serial0/1/1
+ ip address 30.0.0.2 255.255.255.252
+ encapsulation ppp
+ ppp authentication chap
+ clock rate 2000000
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 2
+ router-id 2.2.2.2
+ log-adjacency-changes
+ network 30.0.0.0 0.0.0.3 area 0
+ network 192.168.5.0 0.0.0.63 area 0
+ network 192.168.5.96 0.0.0.15 area 0
+ network 192.168.6.0 0.0.0.15 area 0
+!
+ipv6 router ospf 1
+ router-id 2.2.2.2
+ log-adjacency-changes
+!
+ipv6 router ospf 2
+ log-adjacency-changes
+!
+ip classless
+ip route 209.165.201.0 255.255.255.0 192.168.6.2 
+!
+ip flow-export version 9
+!
+!
+access-list 2 permit any
+!
+banner motd !WARNING. You need authorization for this device!
+!
+!
+!
+!
+line con 0
+ password 7 082243401A160912
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password 7 0822404F1A0A
+ login local
+ transport input ssh
+line vty 5 15
+ password 7 0822404F1A0A
+ login local
+ transport input ssh
+!
+!
+!
+end
+
