@@ -1,0 +1,1197 @@
+Center:
+Current configuration : 6304 bytes
+!
+! Last configuration change at 12:34:08 UTC Fri Feb 14 2025
+!
+version 17.6
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+! Call-home is enabled by Smart-Licensing.
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname Center
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable password 7 1511021F0725
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name tacos.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+crypto pki trustpoint TP-self-signed-615353071
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-615353071
+ revocation-check none
+ rsakeypair TP-self-signed-615353071
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-615353071
+ certificate self-signed 01
+  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 36313533 35333037 31301E17 0D323530 32313431 31353933
+  345A170D 33353032 31343131 35393334 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3631 35333533
+  30373130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02
+  82010100 B4C3D99A 3708D9C5 2BCB67DF 0DDFD1E4 CAD03BE7 BCB1F778 1CD18B60
+  34D657AB DCB129BB B2D6BBF9 4E8455C6 CE8AE068 893D1C6E 04108967 7F81E110
+  94B8A9FD A777EDAD 1ABDAEE8 C549F829 357EF2F2 415FBB29 307840B9 4F484902
+  17C696DE 677D243B AB8580B2 94E0DCBE 4CFBF6B3 354CC6E5 30D901F5 D2FE2B97
+  AED972CF A46FFA75 56B934EB DA7B797D 64134A7C 0985A83A 672C3EC2 2244BDAE
+  79FA81B1 100F45F3 56BE9CED 86404A61 1FEA79CE 6548EB2A E701F509 FA2D5C7F
+  4F00EB7D 1148F971 070B0315 B52739B6 92AA3199 C63168D9 0CCE791D 8C9853C5
+  C85273FF 9594F82E E51F4AF0 E3B823E6 BBC5D4EE 79142DE1 41A68D13 DD5A1600
+  A60B19DF 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F
+  0603551D 23041830 168014B5 9708C9D3 E47786A0 5AB5825B 8397D475 8F99C430
+  1D060355 1D0E0416 0414B597 08C9D3E4 7786A05A B5825B83 97D4758F 99C4300D
+  06092A86 4886F70D 01010505 00038201 01008C37 826C7887 976850F7 08DDEAD1
+  4023FEB7 34C48CFA C69B304D 6F1FAC94 D9D21223 C5D2CB89 E3066617 06515E1D
+  08EA3729 4713A8FB 5FD1B92B 771A278D C6DF7892 E9B7A915 BAA115FA B2A6F8AE
+  89021D34 0071EBFA 515DC4E0 7DF9E531 4B3F22E7 48D91BEC 602D8061 EE5B0D7D
+  6266BE0C 4AA216B9 7FA791D7 68B9EE29 ECB32E32 7E7409A4 7D30E426 5D39EBE6
+  01C1749C 6527B802 625FE23D BB6A0F61 0530BBBA 70936D40 F16FB758 B20CDF63
+  D4DDBA44 51D1341F F4190C20 1CD23BB2 C7CBC38C 58A30C56 09D95CC1 5E604FF4
+  C48D113D FB2DE463 A35BC121 20D7E8C1 54C6613D 0C83295A 33CBBEEE E5205340
+  B3E742C9 0F113DD3 27CA69D0 2FEBD7AC DBD0
+        quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0
+  D697DF7F 28
+        quit
+!
+!
+no license feature hseck9
+license udi pid ISR4221/K9 sn FGL2744LE6W
+license boot level securityk9
+memory free low-watermark processor 67616
+!
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+username admin password 7 03055F060F01
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ ip address 192.168.7.1 255.255.255.224
+ negotiation auto
+!
+interface Serial0/2/0
+ ip address 20.0.0.1 255.255.255.252
+!
+interface Serial0/2/1
+ ip address 30.0.0.1 255.255.255.252
+!
+router ospf 3
+ router-id 3.3.3.3
+ network 20.0.0.0 0.0.0.3 area 0
+ network 30.0.0.0 0.0.0.3 area 0
+ network 192.168.7.0 0.0.0.31 area 0
+!
+ip http server
+ip http authentication local
+ip http secure-server
+ip forward-protocol nd
+ip ssh version 2
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner motd ^CAuthorization required for this device^C
+!
+line con 0
+ transport input none
+ stopbits 1
+line aux 0
+line vty 0 4
+ password 7 05080A0E325F
+ login local
+ transport input ssh
+line vty 5 14
+ login
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+!
+end
+
+
+DeliveryR1:
+Current configuration : 7076 bytes
+!
+! Last configuration change at 10:29:49 UTC Mon Feb 10 2025
+!
+version 17.6
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname DeliveryR1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 9 $9$bxw5uNNtYzc1.k$BkbgTO6AE8LFPr2ixzvEZ0DdNkgHIELwk./fHfgdPBw
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name taco.com
+ip dhcp excluded-address 192.168.5.65 192.168.5.70
+!
+ip dhcp pool LAN1
+ network 192.168.5.64 255.255.255.224
+ default-router 192.168.5.65
+ dns-server 8.8.8.8
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+crypto pki trustpoint TP-self-signed-34528225
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-34528225
+ revocation-check none
+ rsakeypair TP-self-signed-34528225
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-34528225
+ certificate self-signed 01
+  3082032C 30820214 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  2F312D30 2B060355 04031324 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33343532 38323235 301E170D 32353031 33313132 32353139
+  5A170D33 35303133 31313232 3531395A 302F312D 302B0603 55040313 24494F53
+  2D53656C 662D5369 676E6564 2D436572 74696669 63617465 2D333435 32383232
+  35308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201
+  01008492 F3AF882D 073E81E9 40FA7458 7344B186 7F2BF67E 17B2F33A 1372A2B7
+  1AD942F0 865D93A5 6B491E8B 2F9AE4E3 1F3628FC D26D3E03 D9E82B7C 291628A4
+  07BAD76E 16FD10FA 39F376EE 926D0E68 A354CE8A 99BADC0A 3DBF2363 2018A02D
+  1803E6FD 5AD84262 0A92D810 9C6EE917 07A366BB DE089DB6 209A0C75 A681ABAE
+  3CDB6456 3567F9D1 143D8893 325B629B 35A5D0C7 D4C58577 9D91CC1C BD83F00C
+  41258D36 E54EAE84 2DCAE75D 23249C29 4F9AA54F 19180B20 6E5230F3 39234767
+  E430CE50 3600464A 18243601 85DCA2F6 13A9B8C8 1D4A78EF CA15F039 83804C3D
+  C1A74E64 D9CEF4A4 271D2522 BD8A0D15 DAE6FB45 38828A21 868C060A 4B782F26
+  C1FD0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 14798FB8 C9E78E37 E21DC730 E771AA6F E51D0F59 52301D06
+  03551D0E 04160414 798FB8C9 E78E37E2 1DC730E7 71AA6FE5 1D0F5952 300D0609
+  2A864886 F70D0101 05050003 82010100 58F7DE02 B4314F0F E0EF09BB 6177A3D3
+  97C2497E 93CE6063 A79C7E98 14A7457C AFA471E1 2CC75283 5C625F91 0422EBEB
+  1EE0476B 5E3DDE3C F11E226F A17D57AD 28F77FC7 A7FBF8B4 6822E288 8D90D212
+  199D74D7 222846CA BF6FCE3D 2FC60B72 BEE189E3 C39088FA DCC21A56 23CE6C8A
+  84946F21 D4F18066 FA8458DD 5C273985 E4E9E39B D5DA79AE 7E75EE44 B62061EF
+  0BC9EDF2 827387A3 CBB3EBDC 34BDBD40 94250838 BE4C429D 4445DE5C 1CEA3429
+  81BDF99B 2AB43F80 2AD55AE3 0D721DB9 A742640E E31A500C 2CD76AB9 447D2365
+  EECA4660 F9CBB1BC 119AC57C B9F9C981 C73164D4 E39AD0A5 4B89DD78 6254D80D
+  6E719FF5 07360D52 AF77FA81 25DB9F78
+        quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0
+  D697DF7F 28
+        quit
+!
+!
+no license feature hseck9
+license udi pid ISR4221/K9 sn FGL2744LE7R
+license boot level securityk9
+memory free low-watermark processor 67616
+!
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+username admin secret 9 $9$MSZmMDeclvNsbU$qcupnrM7mHUrqz48XpUoEddQo33dVgrBd2jLlUhNAZs
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ negotiation auto
+!
+interface GigabitEthernet0/0/0.40
+ description VLAN 40's subinterface
+ encapsulation dot1Q 40
+ ip address 192.168.5.66 255.255.255.224
+ standby version 2
+ standby 1 ip 192.168.5.65
+ standby 1 priority 105
+ standby 1 preempt
+ ipv6 address 2001:ACAD:DB8:7::2/64
+!
+interface GigabitEthernet0/0/0.50
+ description VLAN 50's subinterface
+ encapsulation dot1Q 50
+ ip address 192.168.5.99 255.255.255.240
+ standby version 2
+ standby 2 ip 192.168.5.97
+ standby 2 priority 105
+ standby 2 preempt
+ ipv6 address 2001:ACAD:DB8:5::2/64
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface Serial0/2/0
+ no ip address
+!
+interface Serial0/2/1
+ no ip address
+!
+router ospf 1
+ router-id 1.1.1.1
+ network 20.0.0.0 0.0.0.3 area 0
+ network 192.168.5.0 0.0.0.63 area 0
+ network 192.168.5.64 0.0.0.31 area 0
+ network 192.168.5.96 0.0.0.15 area 0
+!
+ip http server
+ip http authentication local
+ip http secure-server
+ip forward-protocol nd
+ip ssh version 2
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner motd ^CWarning. You need authorization for this device^C
+!
+line con 0
+ password 7 14141D051F0B262E
+ transport input none
+ stopbits 1
+line aux 0
+line vty 0 4
+ password 7 0205085A1815
+ login local
+ transport input ssh
+line vty 5 15
+ password 7 0205085A1815
+ login local
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+!
+end
+
+DeliveryR2:
+Current configuration : 6755 bytes
+!
+! Last configuration change at 10:14:33 UTC Mon Feb 10 2025
+!
+version 17.6
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service call-home
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname DeliveryR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 9 $9$8bsfPSdZFAOeJk$.vzhhyDKajjuRRzsDqBFqWxkzq/H6CQq13rVtPPkDxc
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip domain name taco.com
+ip dhcp excluded-address 192.168.5.97 192.168.5.102
+!
+ip dhcp pool LAN2
+ network 192.168.5.96 255.255.255.240
+ dns-server 8.8.8.8
+ default-router 192.168.5.97
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+!
+!
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+crypto pki trustpoint TP-self-signed-864956808
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-864956808
+ revocation-check none
+ rsakeypair TP-self-signed-864956808
+!
+crypto pki trustpoint SLA-TrustPoint
+ enrollment pkcs12
+ revocation-check crl
+!
+!
+crypto pki certificate chain TP-self-signed-864956808
+ certificate self-signed 01
+  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 38363439 35363830 38301E17 0D323530 32303330 37313731
+  395A170D 33353032 30333037 31373139 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3836 34393536
+  38303830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02
+  82010100 B66007E6 9CDE63FB B0DA5864 D5825B6C 42AFFA3D D9D02EAC 632A86D6
+  6B231794 F26BE3EB 2EC774DF DE0CAB68 893BCDAC 4EE334BB D86BF7C5 DB00784A
+  D317F40B E07DC4DA F80A628C 89033771 B6309398 D9527017 5F80B431 FFCB4D80
+  63D3ED34 34F50DD7 0435F4D6 907D3B61 49A8F770 0883D552 94159D47 5511BBB1
+  974D0C76 AA376F12 0330CBDD 508274EF ADAD7FD1 02154BA0 32347124 61AD17AA
+  E9CFBD1D 5E36D05E 82761224 C46DE3AA FCD10F0B 15B9FCDE C22520C4 C21780BD
+  D88A17CF 54B25710 6E7FAEB5 CCD336B9 B7309279 EF5E8457 F9BD30A0 44741D93
+  B08C9B71 5B2D24B8 0448295D E61F8BC8 DC28324B 61E62FBD 6BED17E1 62FF4A31
+  83379715 02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F
+  0603551D 23041830 1680148B FAF03F60 7FDB7139 1D68B2DF C2874219 1323EB30
+  1D060355 1D0E0416 04148BFA F03F607F DB71391D 68B2DFC2 87421913 23EB300D
+  06092A86 4886F70D 01010505 00038201 01005B56 B2ADD736 C4A3E5AE 44612C16
+  B0BDEF6F 6225019C 0F916A9D 12441200 E3D43A86 3ED866CC FBFC7254 F373573C
+  195561B3 D7AB1FB8 CF8B1106 D48AA48B 9AF8DAB6 B0846E99 7E1FF310 3B21214A
+  1DC54479 59AC9F69 C2FC13D4 D17E667C 942BC82D 4B619380 6E6140CE D16C400A
+  DC67762E AA162784 FC4D51D0 1A3A2305 0654E939 4D6CF80A A4ABC07B 3F0CC535
+  13636C35 6BFDACE3 9C53D199 69CC41FA 45E6927B 3F8E4BEA 09C0025C 5D0B0FCC
+  9ACEA978 02B19A61 F524CA69 2E1BC413 F8CB4371 017DFED6 2893C4AD 597145FF
+  52D7857A 201CEDCE 43F91588 A8E7C382 CBE77595 FAC780F6 73CAD26D 649BB4CB
+  25F79B62 44444CBD EBAA9832 43DD7805 0F16
+        quit
+crypto pki certificate chain SLA-TrustPoint
+ certificate ca 01
+  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030
+  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363
+  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934
+  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305
+  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720
+  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030
+  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D
+  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520
+  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE
+  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC
+  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188
+  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7
+  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191
+  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44
+  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201
+  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85
+  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500
+  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905
+  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B
+  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8
+  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C
+  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B
+  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678
+  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB
+  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0
+  D697DF7F 28
+        quit
+!
+!
+no license feature hseck9
+license udi pid ISR4221/K9 sn FGL2744LE6X
+license boot level securityk9
+memory free low-watermark processor 67616
+!
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+username admin secret 9 $9$vC1msNhCe.h3ak$GZg3i8g8OcKg7psnniY5Q9LvngwxRUK.p4fu7FSPb8I
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ no ip address
+ negotiation auto
+!
+interface GigabitEthernet0/0/1.40
+ encapsulation dot1Q 40
+ ip address 192.168.5.67 255.255.255.224
+ standby version 2
+ standby 1 ip 192.168.5.65
+ standby 1 preempt
+ ipv6 address 2001:ACAD:DB8:7::3/64
+!
+interface GigabitEthernet0/0/1.50
+ encapsulation dot1Q 50
+ ip address 192.168.5.98 255.255.255.240
+ standby version 2
+ standby 2 ip 192.168.5.97
+ standby 2 preempt
+ ipv6 address 2001:ACAD:DB8:5::1/64
+!
+interface Serial0/2/0
+ no ip address
+ shutdown
+!
+interface Serial0/2/1
+ no ip address
+ shutdown
+!
+ip http server
+ip http authentication local
+ip http secure-server
+ip forward-protocol nd
+ip ssh version 2
+!
+!
+!
+!
+!
+!
+control-plane
+!
+banner motd ^CWARNING. You need authorization for this device^C
+!
+line con 0
+ password console
+ login
+ transport input none
+ stopbits 1
+line aux 0
+line vty 0 4
+ password class
+ login local
+ transport input ssh
+line vty 5 15
+ password class
+ login local
+ transport input ssh
+!
+call-home
+ ! If contact email address in call-home is configured as sch-smart-licensing@cisco.com
+ ! the email address configured in Cisco Smart License Portal will be used as contact email address to send SCH notifications.
+ contact-email-addr sch-smart-licensing@cisco.com
+ profile "CiscoTAC-1"
+  active
+  destination transport-method http
+!
+!
+!
+!
+!
+!
+end
+
+
+DeliverySW1:
+Current configuration : 5265 bytes
+!
+! Last configuration change at 10:11:00 UTC Mon Feb 10 2025 by admin
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname DeliverySW1
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 9 $9$olmNqJLix/sdrJ$DgY9DfXZL5KNvI09p8VGrfbs01y0AKrQv5bdhtgeU/U
+!
+username admin secret 9 $9$HvFhOuc24/rE1l$p5ttETteqDKMWyBUmsZgDnFHNzWFgDvPLm1o4K                                                                                                             IVbBE
+no aaa new-model
+switch 1 provision c1000-24t-4g-l
+system mtu routing 1500
+!
+!
+ip domain-name taco.com
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3058720256
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3058720256
+ revocation-check none
+ rsakeypair TP-self-signed-3058720256
+!
+!
+crypto pki certificate chain TP-self-signed-3058720256
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33303538 37323032 3536301E 170D3235 30323033 30373032
+  33385A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 30353837
+  32303235 3630819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100B8A0 4888A6B7 D83AB73D 28909CD6 AEC62ED5 A14BDA61 2949870C 5E087B28
+  9FAAE6F3 F97E7B13 23F4EBB3 9814F881 58BB2119 3D97633E 0EA573BC 656E6AC5
+  4174BA4D 03254342 80481C16 A0CD163D E86956D0 38E6F949 7A554607 B28E54A8
+  31E6C2F3 92FE0F15 66411F71 D078085D ACFA4AB8 DA705CC3 8648041F 3EAE16D9
+  0E050203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 14EFE8CB 316E153C 1CF651DC 847F3A08 FEAA46E3 B1301D06
+  03551D0E 04160414 EFE8CB31 6E153C1C F651DC84 7F3A08FE AA46E3B1 300D0609
+  2A864886 F70D0101 05050003 81810067 2FC74FAD E6D53150 0F123C44 A0ABA42C
+  E138229B 90B537C3 529E5F4E 460B9819 5C90CEE9 C74913DF 78D62B8E ECA9D3A4
+  D2D248A7 C411EC4B 98835369 032639F8 F5F5DC72 5D71FF2E AD5FD855 DAC8BF84
+  2C73EFD5 66966919 FA400A87 AD8BA5B0 292FE92F 59F626D7 C54A620B 7F3B71E4
+  EC8C570F 3AEA095E F6725013 DE3B7E
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/1
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/2
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 40
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 3822.e22f.e475
+ switchport port-security mac-address sticky b05c.da21.fd0c
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 40
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/24
+ switchport mode trunk
+ ip dhcp snooping trust
+!
+interface GigabitEthernet1/0/25
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/26
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ switchport access vlan 99
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan40
+ ip address 192.168.5.73 255.255.255.224
+!
+interface Vlan50
+ no ip address
+!
+ip http server
+ip http secure-server
+ip ssh version 2
+!
+!
+!
+banner motd ^CWarning. You need authorization for this device^C
+!
+line con 0
+ password 7 00071C0817540703
+line vty 0 4
+ password 7 00071F071748
+ login local
+ transport input ssh
+line vty 5 15
+ password 7 00071F071748
+ login local
+ transport input ssh
+!
+end
+
+
+DeliverySW2:
+Current configuration : 5750 bytes
+!
+! Last configuration change at 10:10:30 UTC Mon Feb 10 2025
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname DeliverySW2
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 9 $9$ub35edBQvl51Lp$rekbGpGpvrvkolfxG6l/cHjoGMLyHMoZupZd0tAX15Q
+!
+username admin secret 9 $9$oxMCKJnFPNIrlz$rRmx/Ll9HGGGqhWoSXX3/FS12474TzlUX8ILe.                                                                                                             ekzWQ
+no aaa new-model
+switch 1 provision c1000-24t-4g-l
+system mtu routing 1500
+!
+!
+ip domain-name taco.com
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-752923008
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-752923008
+ revocation-check none
+ rsakeypair TP-self-signed-752923008
+!
+!
+crypto pki certificate chain TP-self-signed-752923008
+ certificate self-signed 01
+  30820229 30820192 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 37353239 32333030 38301E17 0D323530 32303330 37303635
+  315A170D 33303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3735 32393233
+  30303830 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100
+  8281BDD6 13DEC88B ACDE65A5 0524BDF0 6C1C9D77 527A0844 97B79D4C B1CE68E0
+  DB2E5858 2F836E89 52B75954 5D0C0156 2BF6B31A ECD7E101 D44E915C 5B09289C
+  61ACF3B0 733BEEA7 12FAC93F C17AE9CA 78E7AACE 7C0AFA80 2E92B5F0 0520BE70
+  07442896 ACE2E42E 4A3BA899 4BC4477C 18135896 B38038C5 013338B3 D935EC4B
+  02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 0603551D
+  23041830 168014DF E358002F 35FEF38D A839B5A2 EEC7B5E0 86AF5D30 1D060355
+  1D0E0416 0414DFE3 58002F35 FEF38DA8 39B5A2EE C7B5E086 AF5D300D 06092A86
+  4886F70D 01010505 00038181 00222032 0F797A2A 29144797 5622F832 2E862E99
+  B2023FF6 4D312E08 9C9434E1 B1EB8AA1 CC8AAEA4 73E591A4 73533E81 41411392
+  F4CE25DA 84E4F314 3EE2C4F5 92EB33BC A1DD3C4D DC58B346 A71487A0 0D64FB1C
+  15B37DBE 246B08E3 AE632E22 EE8FA007 61B02574 F282C5CE 6F5C8232 474A89F7
+  53C50AE5 496EE323 92EEE5C2 FE
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/1
+ switchport mode trunk
+ channel-group 1 mode passive
+!
+interface GigabitEthernet1/0/2
+ switchport mode trunk
+ channel-group 1 mode passive
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 50
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky b05c.da21.fd0c
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 50
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/24
+ switchport mode trunk
+ ip dhcp snooping trust
+!
+interface GigabitEthernet1/0/25
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/26
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan40
+ no ip address
+!
+interface Vlan50
+ ip address 192.168.5.109 255.255.255.240
+!
+ip http server
+ip http secure-server
+ip ssh version 2
+!
+!
+!
+banner motd ^CWARNING. You need authorization for this device^C
+!
+line con 0
+ password 7 094F41070A0A1B17
+ login
+line vty 0 4
+ password 7 104D05181604
+ login local
+ transport input ssh
+line vty 5 15
+ password 7 104D05181604
+ login local
+ transport input ssh
+!
+end
