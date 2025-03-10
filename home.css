@@ -1,0 +1,180 @@
+/* Alap CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px; /* Megnöveltük a max-width-et, hogy jobban kitöltse a teret */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: darkblue;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: center; /* Középre igazítjuk a logót és a menüt */
+    align-items: center;
+    position: relative; /* A logó pozicionálásához */
+}
+
+header .logo {
+    position: absolute; /* A logót középre helyezzük */
+    left: 50%;
+    transform: translateX(-50%); /* A logó teljesen középre igazítása */
+}
+
+header .logo img {
+    height: 50px; /* Logó magasságának csökkentése 50%-kal (50px helyett 25px) */
+}
+
+/* Navigáció */
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 60%; /* A navigációnak a rendelkezésre álló terület 60%-át adjuk */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* A linkek közötti távolság */
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 15px; /* A linkek közötti margó */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: lightblue; /* Kiemelő szín hover-re */
+    border-bottom: 2px solid lightblue; /* Aláhúzás hover-re */
+}
+
+/* Hero szekció */
+#home {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#home .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 15px 25px;
+    background-color: #f4a261;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #e76f51;
+}
+
+/* Autó Galéria */
+#car-gallery {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#car-gallery .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#car-gallery h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.car-item {
+    display: inline-block;
+    width: 30%;
+    margin: 15px;
+    background-color: gray;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.car-item:hover {
+    transform: translateY(-10px);
+}
+
+.car-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.car-item h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.car-item p {
+    font-size: 16px;
+    color: white;
+}
+
+.car-item a {
+    font-size: 16px;
+    color: skyblue;
+    text-decoration: underline;
+}
+
+.price {
+    font-size: 18px;
+    color: #e76f51;
+    margin-top: 10px;
+}
+
+/* Reszponzív design: A képek mobil eszközökön rugalmasan igazodjanak */
+@media (max-width: 768px) {
+    .car-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Mobilnézethez a navigációt és a logót is igazítjuk */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        width: 100%; /* A navigációt kitöltjük */
+        justify-content: center; /* A linkeket középre igazítjuk */
+        margin-top: 20px; /* Külön margó a navigációnak */
+    }
+
+    .logo img {
+        margin-bottom: 20px; /* A logó és a navigáció közötti távolság növelése */
+    }
+}

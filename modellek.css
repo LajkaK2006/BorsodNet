@@ -1,0 +1,150 @@
+/* Alap stílusok */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: greenyellow;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Fejléc */
+header {
+    background-color: darkgreen;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Logó balra, menü jobbra */
+    align-items: center; /* Vertikális igazítás középre */
+    position: relative; /* A logó pozicionálásához */
+}
+
+header .logo {
+    position: absolute; /* A logót középre helyezzük */
+    left: 50%;
+    transform: translateX(-50%); /* A logó teljesen középre igazítása */
+}
+
+header .logo img {
+    height: 50px; /* Logó magasságának csökkentése 50%-kal */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* A navigációnak a rendelkezésre álló terület 60%-át adjuk */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* A linkek közötti távolság */
+    width: 100%;
+}
+
+nav ul li {
+    margin: 0 300px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: olivedrab; /* Kiemelő szín hover-re */
+    border-bottom: 2px solid olivedrab; /* Aláhúzás hover-re */
+}
+
+/* Modellek szekció */
+section#models {
+    padding: 40px 0;
+    background-color: silver;
+    text-align: center;
+}
+
+.model-item {
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    background-color: darkolivegreen;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.model-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.model-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.model-item a{
+    font-size: 16px;
+    color: skyblue;
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+h3 {
+    font-size: 24px;
+    margin-top: 15px;
+    color: #000;
+}
+
+.price {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #f39c12;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Reszponzív stílusok */
+@media (max-width: 768px) {
+    /* Fejléc reszponzív beállítások */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center; /* Mobilon középre igazítjuk a menüt */
+        margin-top: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    /* Modellek szekció reszponzív beállítások */
+    .model-item {
+        width: 80%;
+    }
+}
