@@ -4,12 +4,12 @@ document.getElementById('lang-btn').addEventListener('click', function() {
     if (currentLang === 'hu') {
         // Átváltás angolra
         document.documentElement.lang = 'en';
-        document.getElementById('lang-btn').innerText = 'HU';
+        document.getElementById('lang-btn').innerHTML = '<i class="fas fa-flag-uk"></i> EN';
         updateTextToEnglish();
     } else {
         // Átváltás magyarra
         document.documentElement.lang = 'hu';
-        document.getElementById('lang-btn').innerText = 'EN';
+        document.getElementById('lang-btn').innerHTML = '<i class="fas fa-flag-hungary"></i> HU';
         updateTextToHungarian();
     }
 });

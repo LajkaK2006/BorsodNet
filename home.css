@@ -46,10 +46,10 @@ nav {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     display: flex;
     justify-content: space-between; /* A linkek közötti távolság */
-    width: 100%;
+    width: 25%;
 }
 
 nav ul li {
@@ -57,7 +57,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
     font-size: 18px;
 }
@@ -74,17 +74,26 @@ nav ul li a:hover {
 }
 
 #lang-btn {
+    display: flex;
+    align-items: center;
     padding: 8px 16px;
-    background-color: #333;
-    color: white;
+    background: url('./en-flag.png') no-repeat center center/cover;
+    color: black;
     border: none;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
+    gap: 8px;
+    text-decoration: none;
 }
 
 #lang-btn:hover {
     background-color: #555;
 }
+
+#lang-btn i {
+    font-size: 18px; /* Zászló ikonok mérete */
+}
+
 
 /* Hero szekció */
 #home {
