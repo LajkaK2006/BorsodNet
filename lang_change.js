@@ -1,47 +1,31 @@
-let isEnglish = false;
+document.getElementById('lang-btn').addEventListener('click', function() {
+    const currentLang = document.documentElement.lang;
 
-function toggleLanguage() {
-    isEnglish = !isEnglish;
-    
-    const button = document.getElementById("language-toggle");
-    const elements = document.querySelectorAll("[data-lang]");
-
-    // Szöveg módosítása
-    elements.forEach((element) => {
-        const langKey = element.getAttribute("data-lang");
-        if (isEnglish) {
-            element.innerHTML = translations[langKey].en;
-        } else {
-            element.innerHTML = translations[langKey].hu;
-        }
-    });
-
-    // Gomb szövege
-    if (isEnglish) {
-        button.innerHTML = "Hungarian";
+    if (currentLang === 'hu') {
+        // Átváltás angolra
+        document.documentElement.lang = 'en';
+        document.getElementById('lang-btn').innerText = 'HU';
+        updateTextToEnglish();
     } else {
-        button.innerHTML = "English";
+        // Átváltás magyarra
+        document.documentElement.lang = 'hu';
+        document.getElementById('lang-btn').innerText = 'EN';
+        updateTextToHungarian();
     }
+});
+
+function updateTextToEnglish() {
+    // Például cserélhetjük a szövegeket angolra
+    document.querySelector('h2').innerText = 'Welcome to the Mini Miskolc factory!';
+    document.querySelector('p').innerText = 'Precision, innovation, and quality in every Mini car.';
+    document.querySelector('.btn').innerText = 'Explore our models';
+    // Add other translations similarly
 }
 
-// Nyelvi fordítások objektum
-const translations = {
-    "home-title": {
-        hu: "Üdvözöljük a Mini Miskolc gyárában!",
-        en: "Welcome to Mini Miskolc Factory!"
-    },
-    "home-description": {
-        hu: "Precizitás, innováció és minőség minden egyes Mini autóban.",
-        en: "Precision, innovation, and quality in every Mini car."
-    },
-    "cta-text": {
-        hu: "Fedezze fel modelleinket",
-        en: "Explore our models"
-    },
-    // További szövegek...
-};
-
-// Alapértelmezett nyelv beállítása
-document.addEventListener("DOMContentLoaded", function () {
-    toggleLanguage(); // Alapértelmezett nyelv betöltése
-});
+function updateTextToHungarian() {
+    // Visszaállítás magyarra
+    document.querySelector('h2').innerText = 'Üdvözöljük a Mini Miskolc gyárában!';
+    document.querySelector('p').innerText = 'Precizitás, innováció és minőség minden egyes Mini autóban.';
+    document.querySelector('.btn').innerText = 'Fedezze fel modelleinket';
+    // Add other translations similarly
+}
