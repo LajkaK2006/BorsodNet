@@ -4,19 +4,21 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: darkgrey;
+    overflow: hidden; /* Megakadályozza, hogy a képernyőn kívül jelenjen meg a tartalom */
+    background-color: #87CEEB; /* Égkék háttér */
 }
 
 .container {
     max-width: 1200px; /* Megnöveltük a max-width-et, hogy jobban kitöltse a teret */
     margin: 0 auto;
     padding: 0 20px;
+    color: gray;
 }
 
 /* Header */
 header {
     background-color: darkblue;
-    color: lighblue;
+    color: lightblue;
     padding: 20px 0;
 }
 
@@ -46,7 +48,7 @@ nav {
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 0 -50%;
     padding: 5px;
     display: flex;
     justify-content: space-between; /* A linkek közötti távolság */
@@ -70,8 +72,8 @@ nav ul li a:hover {
 
 #language-switcher {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0px;
+    right: 40px;
 }
 
 #lang-btn {
@@ -88,7 +90,7 @@ nav ul li a:hover {
 }
 
 #lang-btn:hover {
-    background-color: #555;
+    background-color: lightsteelblue;
 }
 
 #lang-btn i {
@@ -123,10 +125,26 @@ nav ul li a:hover {
     background-color: #e76f51;
 }
 
+.animation-container {
+    position: absolute;
+    top: 300%;
+    left: -150px;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 500%;
+    overflow: hidden; /* Az autó ne lépje túl a képernyőt */
+}
+
+.mini-car {
+    position: absolute;
+    width: 150px; /* Az autó szélessége */
+    animation: drive 10s linear infinite; /* Az animáció beállítása */
+}
+
 /* Autó Galéria */
 #car-gallery {
     padding: 50px 0;
-    background-color: #f9f9f9;
+    background-color: lightcyan;
     text-align: center;
 }
 
@@ -169,7 +187,7 @@ nav ul li a:hover {
 
 .car-item p {
     font-size: 16px;
-    color: white;
+    color: snow;
 }
 
 .car-item a {
@@ -180,8 +198,16 @@ nav ul li a:hover {
 
 .price {
     font-size: 18px;
-    color: #e76f51;
+    color: lightblue;
     margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
 /* Reszponzív design: A képek mobil eszközökön rugalmasan igazodjanak */
@@ -205,5 +231,15 @@ nav ul li a:hover {
 
     .logo img {
         margin-bottom: 20px; /* A logó és a navigáció közötti távolság növelése */
+    }
+}
+
+/* Animáció, amely a Mini autót folyamatosan mozgatja balról jobbra */
+@keyframes drive {
+    0% {
+        left: -150px; /* Az autó kezdő pozíciója balról */
+    }
+    100% {
+        left: 100%; /* Az autó végső pozíciója jobb oldalon */
     }
 }

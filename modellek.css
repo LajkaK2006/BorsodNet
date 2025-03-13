@@ -20,13 +20,13 @@ header {
 
 header .container {
     display: flex;
-    justify-content: space-between; /* Logó balra, menü jobbra */
+    justify-content: space-between; /* A menü és a nyelvváltó gomb közötti hely kitöltése */
     align-items: center; /* Vertikális igazítás középre */
-    position: relative; /* A logó pozicionálásához */
+    position: relative;
 }
 
 header .logo {
-    position: absolute; /* A logót középre helyezzük */
+    position: absolute; /* A logó középre helyezése */
     left: 50%;
     transform: translateX(-50%); /* A logó teljesen középre igazítása */
 }
@@ -35,35 +35,63 @@ header .logo img {
     height: 50px; /* Logó magasságának csökkentése 50%-kal */
 }
 
+/* Navigáció */
 nav {
     display: flex;
-    justify-content: space-between;
-    width: 100%; /* A navigációnak a rendelkezésre álló terület 60%-át adjuk */
+    justify-content: flex-start; /* A navigációs linkeket balra igazítjuk */
+    width: auto; /* A navigációnak ne foglaljon el fix szélességet */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 5px;
     display: flex;
     justify-content: space-between; /* A linkek közötti távolság */
-    width: 100%;
+    width: auto; /* Ne legyen fix szélessége */
 }
 
 nav ul li {
-    margin: 0 300px;
+    margin: 0 15px; /* A linkek közötti margó */
 }
 
 nav ul li a {
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
     font-size: 18px;
-    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: olivedrab; /* Kiemelő szín hover-re */
-    border-bottom: 2px solid olivedrab; /* Aláhúzás hover-re */
+    color: lightblue; /* Kiemelő szín hover-re */
+    border-bottom: 2px solid lightblue; /* Aláhúzás hover-re */
+}
+
+/* Nyelvváltó gomb */
+#language-switcher {
+    position: absolute; /* A nyelvváltó gombot a jobb oldalra pozicionáljuk */
+    top: 0px;
+    right: 40px;
+}
+
+#lang-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: url('./en-flag.png') no-repeat center center/cover;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    gap: 8px;
+    text-decoration: none;
+}
+
+#lang-btn:hover {
+    background-color: #555;
+}
+
+#lang-btn i {
+    font-size: 18px; /* Zászló ikonok mérete */
 }
 
 /* Modellek szekció */
@@ -103,19 +131,19 @@ section#models {
 
 h2 {
     font-size: 32px;
-    color: #333;
+    color: snow;
 }
 
 h3 {
     font-size: 24px;
     margin-top: 15px;
-    color: #000;
+    color: snow;
 }
 
 .price {
     font-size: 20px;
     margin-top: 10px;
-    color: #f39c12;
+    color: lightblue;
 }
 
 /* Footer */
@@ -128,14 +156,13 @@ footer {
 
 /* Reszponzív stílusok */
 @media (max-width: 768px) {
-    /* Fejléc reszponzív beállítások */
     header .container {
         flex-direction: column;
         text-align: center;
     }
 
     nav {
-        justify-content: center; /* Mobilon középre igazítjuk a menüt */
+        justify-content: center;
         margin-top: 15px;
     }
 
@@ -143,7 +170,6 @@ footer {
         flex-direction: column;
     }
 
-    /* Modellek szekció reszponzív beállítások */
     .model-item {
         width: 80%;
     }
