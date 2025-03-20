@@ -12,4 +12,6 @@ function toggleDescription(id) {
     if (!isVisible) {
         desc.style.display = "block";
     }
+
+    
 }
