@@ -1,12 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="rolunk.css">
     <title>Rólunk</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Tektur&display=swap');
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="mini logo.png" alt="Mini Miskolc Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./home.html">Kezdőlap</a></li>
+                    <li><a href="./modellek.html">Modellek</a></li>
+                    <li><a href="./rolunk.html">Rólunk</a></li>
+                </ul>
+                <!-- Fordító gomb -->
+                <div id="language-switcher">
+                    <button id="lang-btn">
+                        <i>EN</i>
+                    </button> 
+            </nav>
+        </div>
+    </header>
+    <section id="about-us" class="about-us">
+        <div class="container">
+            <h2>Rólunk</h2>
+            <p>Ismerje meg csapatunk tagjait!</p>
+            <div class="card-container">
+                <!-- Kártya 1 -->
+                <div class="card">
+                    <img src="Lajka_Kristof.jpg" alt="Csapattag 1" class="card-image">
+                    <h3>Lajka Kristóf</h3>
+                    <p class="position">Hálózat Menedzser</p>
+                    <button class="info-btn" onclick="toggleDescription('desc1')">Tudjon meg többet</button>
+                    <div id="desc1" class="description">
+                        <p>Kristóf csinálta a gyár hálózatának minden részét, minden kulcsfontosságu dolog az ő műve és a Linux szerver elkészítésében is kulcsfontosságu szerepet játszott.</p>
+                    </div>
+                </div>
     
+                <!-- Kártya 2 -->
+                <div class="card">
+                    <img src="Varadi_Adam.jpeg" alt="Csapattag 2" class="card-image">
+                    <h3>Váradi Ádám</h3>
+                    <p class="position">Szerver Menedzselése</p>
+                    <button class="info-btn" onclick="toggleDescription('desc2')">Tudjon meg többet</button>
+                    <div id="desc2" class="description">
+                        <p>Ádám ismeri a szerverek fortéjait, így az ő munkássága kivitelezhetetlen egy ilyen gyárnál. A halózat kiépítésében is nagy szerepet játszott.</p>
+                    </div>
+                </div>
+    
+                <!-- Kártya 3 -->
+                <div class="card">
+                    <img src="team_member3.jpg" alt="Csapattag 3" class="card-image">
+                    <h3>Enyedi Sándor</h3>
+                    <p class="position">Dokumentáló</p>
+                    <button class="info-btn" onclick="toggleDescription('desc3')">Tudjon meg többet</button>
+                    <div id="desc3" class="description">
+                        <p>Sándor nagyon jó irodista képességeivel egy fantasztikus dokumentációt dobott össze a vezetőségnek.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <script src="lang_cahnge.js"></script>
+    <script src="rolunk.js"></script>
 </body>
 </html>

@@ -1,24 +1,40 @@
 /* Alap CSS */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Tektur', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden; /* Megakadályozza, hogy a képernyőn kívül jelenjen meg a tartalom */
-    background-color: #87CEEB; /* Égkék háttér */
+    overflow: auto; /* Megakadályozza, hogy a képernyőn kívül jelenjen meg a tartalom */
+    background-color: lightgray; /* Égkék háttér */
 }
 
 .container {
     max-width: 1200px; /* Megnöveltük a max-width-et, hogy jobban kitöltse a teret */
     margin: 0 auto;
     padding: 0 20px;
-    color: gray;
+    color: snow;
+}
+
+.tektur-fonts {
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.source-code-pro-fonts {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Header */
 header {
-    background-color: darkblue;
-    color: lightblue;
+    background-color: darkgreen;
+    color: white;
     padding: 20px 0;
 }
 
@@ -66,8 +82,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: lightblue; /* Kiemelő szín hover-re */
-    border-bottom: 2px solid lightblue; /* Aláhúzás hover-re */
+    color: lightgray; /* Kiemelő szín hover-re */
+    border-bottom: 2px solid lightgray; /* Aláhúzás hover-re */
 }
 
 #language-switcher {
@@ -90,7 +106,7 @@ nav ul li a:hover {
 }
 
 #lang-btn:hover {
-    background-color: lightsteelblue;
+    background-color: white;
 }
 
 #lang-btn i {
@@ -125,26 +141,10 @@ nav ul li a:hover {
     background-color: #e76f51;
 }
 
-.animation-container {
-    position: absolute;
-    top: 300%;
-    left: -150px;
-    transform: translateY(-50%);
-    width: 100%;
-    height: 500%;
-    overflow: hidden; /* Az autó ne lépje túl a képernyőt */
-}
-
-.mini-car {
-    position: absolute;
-    width: 150px; /* Az autó szélessége */
-    animation: drive 10s linear infinite; /* Az animáció beállítása */
-}
-
 /* Autó Galéria */
 #car-gallery {
     padding: 50px 0;
-    background-color: lightcyan;
+    background-color: lightgray;
     text-align: center;
 }
 

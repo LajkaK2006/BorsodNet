@@ -1,6 +1,6 @@
 /* Alap stílusok */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Tektur', sans-serif;
     margin: 0;
     padding: 0;
     background-color: greenyellow;
@@ -9,6 +9,22 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
+}
+
+.tektur-fonts {
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.source-code-pro-fonts {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Fejléc */

@@ -1,0 +1,186 @@
+/* Alap stílusok */
+body {
+    font-family: 'Tektur', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: greenyellow;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.tektur-fonts {
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+
+.source-code-pro-fonts {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    background-color: darkgreen;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* A menü és a nyelvváltó gomb közötti hely kitöltése */
+    align-items: center; /* Vertikális igazítás középre */
+    position: relative;
+}
+
+header .logo {
+    position: absolute; /* A logó középre helyezése */
+    left: 50%;
+    transform: translateX(-50%); /* A logó teljesen középre igazítása */
+}
+
+header .logo img {
+    height: 50px; /* Logó magasságának csökkentése 50%-kal */
+}
+
+/* Navigáció */
+nav {
+    display: flex;
+    justify-content: flex-start; /* A navigációs linkeket balra igazítjuk */
+    width: auto; /* A navigációnak ne foglaljon el fix szélességet */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between; /* A linkek közötti távolság */
+    width: auto; /* Ne legyen fix szélessége */
+}
+
+nav ul li {
+    margin: 0 15px; /* A linkek közötti margó */
+}
+
+nav ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: lightblue; /* Kiemelő szín hover-re */
+    border-bottom: 2px solid lightblue; /* Aláhúzás hover-re */
+}
+
+/* Nyelvváltó gomb */
+#language-switcher {
+    position: absolute; /* A nyelvváltó gombot a jobb oldalra pozicionáljuk */
+    top: 0px;
+    right: 40px;
+}
+
+#lang-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: url('./en-flag.png') no-repeat center center/cover;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    gap: 8px;
+    text-decoration: none;
+}
+
+#lang-btn:hover {
+    background-color: #555;
+}
+
+#lang-btn i {
+    font-size: 18px; /* Zászló ikonok mérete */
+}
+
+.about-us {
+    background-color: lightgray;
+    padding: 50px 0;
+}
+
+.about-us .container {
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.card {
+    background-color: skyblue;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 0px;
+    height: auto;
+    clip-path: circle(35%);
+
+}
+
+.card h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.card .position {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.info-btn {
+    background-color: #005f7f;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.info-btn:hover {
+    background-color: #004c66;
+}
+
+.description {
+    display: none;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.description p {
+    line-height: 1.5;
+}
