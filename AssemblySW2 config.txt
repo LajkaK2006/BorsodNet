@@ -1,0 +1,253 @@
+Current configuration : 5851 bytes
+!
+! Last configuration change at 06:28:59 UTC Wed Mar 26 2025
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname AssemblySW2
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 9 $9$ub35edBQvl51Lp$rekbGpGpvrvkolfxG6l/cHjoGMLyHMoZupZd0tAX15Q
+!
+username admin secret 9 $9$oxMCKJnFPNIrlz$rRmx/Ll9HGGGqhWoSXX3/FS12474TzlUX8ILe.ekzWQ
+no aaa new-model
+switch 1 provision c1000-24t-4g-l
+system mtu routing 1500
+!
+!
+ip domain-name mini-miskolc.hu
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-752923008
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-752923008
+ revocation-check none
+ rsakeypair TP-self-signed-752923008
+!
+!
+crypto pki certificate chain TP-self-signed-752923008
+ certificate self-signed 01
+  30820229 30820192 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 37353239 32333030 38301E17 0D323530 32303330 37303635
+  315A170D 33303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3735 32393233
+  30303830 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100
+  8281BDD6 13DEC88B ACDE65A5 0524BDF0 6C1C9D77 527A0844 97B79D4C B1CE68E0
+  DB2E5858 2F836E89 52B75954 5D0C0156 2BF6B31A ECD7E101 D44E915C 5B09289C
+  61ACF3B0 733BEEA7 12FAC93F C17AE9CA 78E7AACE 7C0AFA80 2E92B5F0 0520BE70
+  07442896 ACE2E42E 4A3BA899 4BC4477C 18135896 B38038C5 013338B3 D935EC4B
+  02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 0603551D
+  23041830 168014DF E358002F 35FEF38D A839B5A2 EEC7B5E0 86AF5D30 1D060355
+  1D0E0416 0414DFE3 58002F35 FEF38DA8 39B5A2EE C7B5E086 AF5D300D 06092A86
+  4886F70D 01010505 00038181 00222032 0F797A2A 29144797 5622F832 2E862E99
+  B2023FF6 4D312E08 9C9434E1 B1EB8AA1 CC8AAEA4 73E591A4 73533E81 41411392
+  F4CE25DA 84E4F314 3EE2C4F5 92EB33BC A1DD3C4D DC58B346 A71487A0 0D64FB1C
+  15B37DBE 246B08E3 AE632E22 EE8FA007 61B02574 F282C5CE 6F5C8232 474A89F7
+  53C50AE5 496EE323 92EEE5C2 FE
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/1
+ switchport mode trunk
+ channel-group 1 mode passive
+!
+interface GigabitEthernet1/0/2
+ switchport mode trunk
+ channel-group 1 mode passive
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 50
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky b05c.da21.fd0c
+ switchport port-security mac-address sticky b05c.da21.ffb4
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 50
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/24
+ switchport mode trunk
+ ip dhcp snooping trust
+!
+interface GigabitEthernet1/0/25
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/26
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ switchport access vlan 99
+ switchport mode access
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan40
+ no ip address
+!
+interface Vlan50
+ ip address 192.168.5.109 255.255.255.240
+!
+interface Vlan60
+ no ip address
+!
+ip http server
+ip http secure-server
+ip ssh version 2
+!
+!
+!
+banner motd ^CWARNING. You need authorization for this device^C
+!
+line con 0
+ password 7 094F41070A0A1B17
+ login
+line vty 0 4
+ password 7 104D05181604
+ login local
+ transport input ssh
+line vty 5 15
+ password 7 104D05181604
+ login local
+ transport input ssh
+!
+end

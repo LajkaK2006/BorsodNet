@@ -1,0 +1,228 @@
+Current configuration : 5330 bytes
+!
+! Last configuration change at 06:24:15 UTC Wed Mar 26 2025
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname AssemblySW1
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 9 $9$olmNqJLix/sdrJ$DgY9DfXZL5KNvI09p8VGrfbs01y0AKrQv5bdhtgeU/U
+!
+username admin secret 9 $9$HvFhOuc24/rE1l$p5ttETteqDKMWyBUmsZgDnFHNzWFgDvPLm1o4KIVbBE
+no aaa new-model
+switch 1 provision c1000-24t-4g-l
+system mtu routing 1500
+!
+!
+ip domain-name mini-miskolc.hu
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-3058720256
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-3058720256
+ revocation-check none
+ rsakeypair TP-self-signed-3058720256
+!
+!
+crypto pki certificate chain TP-self-signed-3058720256
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33303538 37323032 3536301E 170D3235 30323033 30373032
+  33385A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 30353837
+  32303235 3630819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100B8A0 4888A6B7 D83AB73D 28909CD6 AEC62ED5 A14BDA61 2949870C 5E087B28
+  9FAAE6F3 F97E7B13 23F4EBB3 9814F881 58BB2119 3D97633E 0EA573BC 656E6AC5
+  4174BA4D 03254342 80481C16 A0CD163D E86956D0 38E6F949 7A554607 B28E54A8
+  31E6C2F3 92FE0F15 66411F71 D078085D ACFA4AB8 DA705CC3 8648041F 3EAE16D9
+  0E050203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603
+  551D2304 18301680 14EFE8CB 316E153C 1CF651DC 847F3A08 FEAA46E3 B1301D06
+  03551D0E 04160414 EFE8CB31 6E153C1C F651DC84 7F3A08FE AA46E3B1 300D0609
+  2A864886 F70D0101 05050003 81810067 2FC74FAD E6D53150 0F123C44 A0ABA42C
+  E138229B 90B537C3 529E5F4E 460B9819 5C90CEE9 C74913DF 78D62B8E ECA9D3A4
+  D2D248A7 C411EC4B 98835369 032639F8 F5F5DC72 5D71FF2E AD5FD855 DAC8BF84
+  2C73EFD5 66966919 FA400A87 AD8BA5B0 292FE92F 59F626D7 C54A620B 7F3B71E4
+  EC8C570F 3AEA095E F6725013 DE3B7E
+        quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/1
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/2
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 40
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 3822.e22f.e475
+ switchport port-security mac-address sticky b05c.da21.fd0c
+ switchport port-security mac-address sticky b05c.da21.ffb4
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 40
+ switchport mode access
+ switchport port-security maximum 3
+ switchport port-security mac-address sticky
+ switchport port-security
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/24
+ switchport mode trunk
+ ip dhcp snooping trust
+!
+interface GigabitEthernet1/0/25
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/26
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/27
+ switchport access vlan 99
+ shutdown
+!
+interface GigabitEthernet1/0/28
+ switchport access vlan 99
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan40
+ ip address 192.168.5.73 255.255.255.224
+!
+interface Vlan60
+ no ip address
+!
+ip http server
+ip http secure-server
+ip ssh version 2
+!
+!
+!
+banner motd ^CWarning. You need authorization for this device^C
+!
+line con 0
+ password 7 0307540515002D49
+ login
+line vty 0 4
+ password 7 00071F071748
+ login local
+ transport input ssh
+line vty 5 15
+ password 7 00071F071748
+ login local
+ transport input ssh
+!
+end
